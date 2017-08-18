@@ -1,11 +1,10 @@
 import React from 'react'
-import { Router, Route, IndexRoute } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import App from './components/app'
 import PhotoGrid from './components/photoGrid'
 import Single from './components/single'
-import createBrowserHistory from 'history/lib/createBrowserHistory';
 
-const browserHistory = createBrowserHistory();
+
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>

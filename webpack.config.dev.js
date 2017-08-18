@@ -12,6 +12,8 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 var ExtractTextPlugin = require('extract-text-webpack-plugin'); 
 
 module.exports = {
+  target: 'web',
+  context: path.join(__dirname, './'),
   devtool: "source-map",
   entry: [
     'webpack-hot-middleware/client',
@@ -43,17 +45,10 @@ module.exports = {
     path: path.resolve("dist"),    
     publicPath: '/'
   },
-  plugins: debug ? 
+  plugins: 
     [
       HtmlWebpackPluginConfig,     
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin()
-    ]
-  : [
-      HtmlWebpackPluginConfig,
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoErrorsPlugin(),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.OccurrenceOrderPlugin()
   ],
 };
