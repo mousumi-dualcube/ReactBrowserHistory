@@ -9,11 +9,9 @@ var HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body'
 });
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin'); 
 
 module.exports = {
   target: 'web',
-  context: path.join(__dirname, './'),
   devtool: "source-map",
   entry: [
     'webpack-hot-middleware/client',
@@ -42,8 +40,7 @@ module.exports = {
   },
   output : {
     filename: "index_bundle.js",
-    path: path.resolve("dist"),    
-    publicPath: '/'
+    path: path.resolve('dist')
   },
   plugins: 
     [
